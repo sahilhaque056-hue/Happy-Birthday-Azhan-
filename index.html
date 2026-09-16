@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>Happy Birthday Azhan 🎂</title>
 
+
 <style>
+
+/* ================= BASIC ================= */
 
 * {
     margin: 0;
@@ -15,176 +24,569 @@
 }
 
 body {
+
     min-height: 100vh;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #111, #292929);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111111,
+            #292929,
+            #111111
+        );
+
     color: white;
+
     text-align: center;
-    overflow: hidden;
+
+    overflow-x: hidden;
 }
+
+
+/* ================= CONTAINER ================= */
 
 .container {
+
     width: 92%;
+
     max-width: 520px;
-    margin: auto;
-    margin-top: 7vh;
-    padding: 28px 20px;
-    background: rgba(255,255,255,0.08);
+
+    margin: 7vh auto 0;
+
+    padding: 30px 20px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
     border-radius: 25px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+
+    box-shadow:
+        0 10px 40px
+        rgba(0,0,0,0.5);
+
 }
 
-/* START SCREEN */
+
+/* ================= START SCREEN ================= */
 
 #startScreen {
     display: block;
 }
 
 .bigShoe {
+
     font-size: 80px;
-    animation: bounce 1.5s infinite;
+
+    animation:
+        bounce 1.5s infinite;
+
 }
 
 h1 {
+
     font-size: 32px;
+
     margin-top: 15px;
+
 }
 
 .name {
+
     font-size: 42px;
+
     font-weight: bold;
-    margin: 10px 0 20px;
+
+    margin:
+        10px 0 20px;
+
 }
 
 .description {
-    color: #ddd;
+
+    color: #dddddd;
+
     line-height: 1.6;
+
+    font-size: 17px;
+
 }
+
+
+/* ================= BUTTON ================= */
 
 .start-btn,
 .prize-btn {
+
     margin-top: 25px;
-    padding: 15px 28px;
+
+    padding:
+        15px 28px;
+
     border: none;
+
     border-radius: 50px;
+
     font-size: 17px;
+
     font-weight: bold;
+
     cursor: pointer;
+
     background: white;
+
     color: black;
-    transition: 0.3s;
+
+    transition:
+        transform 0.25s,
+        box-shadow 0.25s;
+
 }
 
 .start-btn:hover,
 .prize-btn:hover {
-    transform: scale(1.08);
+
+    transform:
+        scale(1.08);
+
+    box-shadow:
+        0 8px 25px
+        rgba(255,255,255,0.2);
+
 }
+
+
+/* ================= CREATOR ================= */
 
 .creator {
+
     display: block;
+
     margin-top: 22px;
+
     font-size: 12px;
-    color: #aaa;
+
+    color: #aaaaaa;
+
     text-decoration: none;
+
+    transition: 0.3s;
+
 }
 
-/* GAME */
+.creator:hover {
+
+    color: white;
+
+    transform:
+        scale(1.03);
+
+}
+
+
+/* ================= GAME ================= */
 
 #gameScreen {
+
     display: none;
+
 }
 
 .gameTitle {
+
     font-size: 30px;
+
     font-weight: bold;
+
 }
 
 .score {
+
     margin-top: 10px;
+
     font-size: 19px;
+
 }
 
 .instruction {
+
     margin-top: 15px;
-    color: #ddd;
+
+    color: #dddddd;
+
 }
 
-/* GAME AREA */
+
+/* ================= GAME AREA ================= */
 
 #gameArea {
+
     position: relative;
+
     height: 320px;
+
     margin-top: 20px;
+
     border-radius: 20px;
-    background: rgba(0,0,0,0.25);
+
+    background:
+        rgba(0,0,0,0.28);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+
     overflow: hidden;
+
 }
 
+
+/* ================= SHOES ================= */
+
 .shoe {
+
     position: absolute;
+
     font-size: 55px;
+
     cursor: pointer;
+
     user-select: none;
-    transition: transform 0.2s;
+
+    transition:
+        transform 0.2s;
+
 }
 
 .shoe:hover {
-    transform: scale(1.2);
+
+    transform:
+        scale(1.25);
+
 }
+
+
+/* ================= MESSAGE ================= */
 
 .message {
-    min-height: 45px;
+
+    min-height: 50px;
+
     margin-top: 15px;
+
     font-size: 16px;
+
+    line-height: 1.5;
+
 }
 
-/* PRIZE BUTTON */
+
+/* ================= PRIZE BUTTON ================= */
 
 #prizeBtn {
+
     display: none;
+
 }
 
-/* ANIMATION */
+
+/* ================= PRIZE SCREEN ================= */
+
+#prizeScreen {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    background:
+        rgba(0,0,0,0.95);
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    overflow-y: auto;
+
+}
+
+
+/* ================= PRIZE BOX ================= */
+
+.prizeBox {
+
+    width: 92%;
+
+    max-width: 500px;
+
+    text-align: center;
+
+    animation:
+        prizePop 0.7s ease;
+
+}
+
+.prizeBox h1 {
+
+    font-size: 38px;
+
+    margin-bottom: 10px;
+
+}
+
+.prizeBox p {
+
+    color: #dddddd;
+
+    font-size: 18px;
+
+    line-height: 1.5;
+
+}
+
+
+/* ================= PHOTO ================= */
+
+.funnyPhoto {
+
+    width: 100%;
+
+    max-width: 320px;
+
+    max-height: 380px;
+
+    object-fit: cover;
+
+    border-radius: 25px;
+
+    margin:
+        20px auto;
+
+    display: block;
+
+    box-shadow:
+        0 0 30px
+        rgba(255,255,255,0.25);
+
+}
+
+
+/* ================= CLOSE BUTTON ================= */
+
+.closeBtn {
+
+    margin-top: 15px;
+
+    padding:
+        12px 25px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+}
+
+
+/* ================= CONFETTI ================= */
+
+.confetti {
+
+    position: fixed;
+
+    top: -30px;
+
+    font-size: 25px;
+
+    z-index: 10000;
+
+    pointer-events: none;
+
+    animation:
+        fall 3s linear forwards;
+
+}
+
+
+/* ================= ANIMATIONS ================= */
 
 @keyframes bounce {
 
-    0%,100% {
-        transform: translateY(0);
+    0%, 100% {
+
+        transform:
+            translateY(0);
+
     }
 
     50% {
-        transform: translateY(-15px);
+
+        transform:
+            translateY(-15px);
+
+    }
+
+}
+
+
+@keyframes prizePop {
+
+    from {
+
+        transform:
+            scale(0.5);
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        transform:
+            scale(1);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+@keyframes fall {
+
+    to {
+
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 480px) {
+
+    .container {
+
+        margin-top: 5vh;
+
+        padding:
+            25px 16px;
+
+    }
+
+    h1 {
+
+        font-size: 27px;
+
+    }
+
+    .name {
+
+        font-size: 36px;
+
+    }
+
+    .bigShoe {
+
+        font-size: 70px;
+
+    }
+
+    .gameTitle {
+
+        font-size: 26px;
+
+    }
+
+    #gameArea {
+
+        height: 300px;
+
+    }
+
+    .prizeBox h1 {
+
+        font-size: 30px;
+
     }
 
 }
 
 </style>
+
 </head>
+
 
 <body>
 
 
-<!-- ================= START SCREEN ================= -->
+<!-- ================================================= -->
+<!-- START SCREEN -->
+<!-- ================================================= -->
 
-<div class="container" id="startScreen">
+<div
+    class="container"
+    id="startScreen"
+>
 
-    <div class="bigShoe">👟</div>
+    <div class="bigShoe">
+        👟
+    </div>
 
-    <h1>🎂 HAPPY BIRTHDAY</h1>
+
+    <h1>
+        🎂 HAPPY BIRTHDAY
+    </h1>
+
 
     <div class="name">
         AZHAN 🎉
     </div>
 
+
     <p class="description">
-        Oye Shoe King 👑<br>
+
+        Oye Shoe King 👑
+
+        <br>
+
         Birthday surprise unlock karne ke liye
         pehle ek chhota sa challenge complete karo 😂
+
     </p>
 
-    <button class="start-btn" onclick="startGame()">
+
+    <button
+        class="start-btn"
+        onclick="startGame()"
+    >
+
         👟 START SHOE GAME
+
     </button>
+
 
     <a
         class="creator"
@@ -192,47 +594,152 @@ h1 {
         target="_blank"
         rel="noopener noreferrer"
     >
+
         Created by @be.like_sahil
+
     </a>
 
 </div>
 
 
-<!-- ================= GAME SCREEN ================= -->
 
-<div class="container" id="gameScreen">
+<!-- ================================================= -->
+<!-- GAME SCREEN -->
+<!-- ================================================= -->
+
+<div
+    class="container"
+    id="gameScreen"
+>
+
 
     <div class="gameTitle">
+
         👟 SHOE CHALLENGE
+
     </div>
+
 
     <div class="score">
+
         Shoes Found:
-        <span id="score">0</span>/5
+
+        <span id="score">
+            0
+        </span>
+
+        /5
+
     </div>
 
+
     <p class="instruction">
+
         👀 Sirf correct 👟 ko pakdo!
+
     </p>
+
 
     <div id="gameArea"></div>
 
-    <div class="message" id="message">
+
+    <div
+        class="message"
+        id="message"
+    >
+
         Ready? 😂
+
     </div>
+
 
     <button
         id="prizeBtn"
         class="prize-btn"
         onclick="claimPrize()"
     >
+
         🏆 CLAIM YOUR PRIZE
+
     </button>
 
 </div>
 
 
+
+<!-- ================================================= -->
+<!-- PRIZE SCREEN -->
+<!-- ================================================= -->
+
+<div id="prizeScreen">
+
+
+    <div class="prizeBox">
+
+
+        <h1>
+
+            🎉 PRIZE UNLOCKED! 🎉
+
+        </h1>
+
+
+        <p>
+
+            HAPPY BIRTHDAY AZHAN! 🎂😂
+
+        </p>
+
+
+        <!-- FRIEND PHOTO -->
+
+        <img
+            src="images/azhan-funny.jpg"
+            alt="Azhan Funny Photo"
+            class="funnyPhoto"
+        >
+
+
+        <p>
+
+            👟 Shoe King ne challenge
+            complete kar diya! 👑
+
+            <br><br>
+
+            Tumhara asli prize hai...
+
+            <br><br>
+
+            <strong>
+                YEH BEIZZATI WALI PHOTO 😂😂😂
+            </strong>
+
+        </p>
+
+
+        <button
+            class="closeBtn"
+            onclick="closePrize()"
+        >
+
+            😂 CLOSE
+
+        </button>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- JAVASCRIPT -->
+<!-- ================================================= -->
+
 <script>
+
 
 /* ================= GAME VARIABLES ================= */
 
@@ -241,40 +748,55 @@ let score = 0;
 const totalShoes = 5;
 
 
+
 /* ================= START GAME ================= */
 
 function startGame() {
 
-    document.getElementById("startScreen").style.display = "none";
+    document
+        .getElementById("startScreen")
+        .style.display = "none";
 
-    document.getElementById("gameScreen").style.display = "block";
+
+    document
+        .getElementById("gameScreen")
+        .style.display = "block";
+
 
     createShoe();
 
 }
 
 
-/* ================= CREATE SHOE ================= */
+
+/* ================= CREATE SHOES ================= */
 
 function createShoe() {
 
-    const gameArea = document.getElementById("gameArea");
+
+    const gameArea =
+        document.getElementById("gameArea");
+
 
     gameArea.innerHTML = "";
 
-    /* Random shoes */
 
-    const shoes = ["👟", "👞", "🩴", "🥾", "👠"];
+    const wrongShoes = [
 
-    const randomWrong1 =
-        shoes[Math.floor(Math.random() * shoes.length)];
+        "👞",
+        "🩴",
+        "🥾",
+        "👠",
+        "👢"
 
-    const randomWrong2 =
-        shoes[Math.floor(Math.random() * shoes.length)];
+    ];
 
-    /* Correct shoe */
 
-    const correct = document.createElement("div");
+    /* ================= CORRECT SHOE ================= */
+
+    const correct =
+        document.createElement("div");
+
 
     correct.className = "shoe";
 
@@ -282,35 +804,54 @@ function createShoe() {
 
     correct.onclick = correctShoe;
 
-    /* Random position */
 
     correct.style.left =
         Math.random() * 75 + "%";
 
+
     correct.style.top =
         Math.random() * 70 + "%";
+
 
     gameArea.appendChild(correct);
 
 
-    /* Wrong shoes */
 
-    for (let i = 0; i < 3; i++) {
+    /* ================= WRONG SHOES ================= */
 
-        const wrong = document.createElement("div");
+    for (
+        let i = 0;
+        i < 3;
+        i++
+    ) {
+
+
+        const wrong =
+            document.createElement("div");
+
 
         wrong.className = "shoe";
 
+
         wrong.innerHTML =
-            shoes[Math.floor(Math.random() * shoes.length)];
+            wrongShoes[
+                Math.floor(
+                    Math.random()
+                    * wrongShoes.length
+                )
+            ];
+
 
         wrong.onclick = wrongShoe;
+
 
         wrong.style.left =
             Math.random() * 75 + "%";
 
+
         wrong.style.top =
             Math.random() * 70 + "%";
+
 
         gameArea.appendChild(wrong);
 
@@ -319,77 +860,245 @@ function createShoe() {
 }
 
 
+
 /* ================= CORRECT SHOE ================= */
 
 function correctShoe() {
 
+
     score++;
 
-    document.getElementById("score").innerText = score;
 
-    document.getElementById("message").innerHTML =
+    document
+        .getElementById("score")
+        .innerText = score;
+
+
+    document
+        .getElementById("message")
+        .innerHTML =
         "✅ Sahi pakde ho Azhan! 👟🔥";
 
-    if (score >= totalShoes) {
 
-        document.getElementById("message").innerHTML =
+    if (
+        score >= totalShoes
+    ) {
+
+
+        document
+            .getElementById("message")
+            .innerHTML =
             "🎉 CHALLENGE COMPLETE!<br>" +
             "Ab asli surprise unlock karo 😂";
 
-        document.getElementById("prizeBtn").style.display =
+
+        document
+            .getElementById("prizeBtn")
+            .style.display =
             "inline-block";
 
-        document.getElementById("gameArea").innerHTML =
-            "🏆👟🎉";
 
-    } else {
+        document
+            .getElementById("gameArea")
+            .innerHTML =
+            "🏆 👟 🎉";
 
-        setTimeout(createShoe, 600);
+    }
+
+    else {
+
+
+        setTimeout(
+            createShoe,
+            500
+        );
 
     }
 
 }
 
 
+
 /* ================= WRONG SHOE ================= */
 
 function wrongShoe() {
 
+
     const messages = [
 
-        "😂 Bhai ye kya utha liya?!",
+        "Bhai ye kya utha liya?! 😂",
 
-        "❌ Ye shoe nahi chahiye tha!",
+        "Ye wala shoe nahi chahiye tha! ❌",
 
-        "🤣 Azhan bhai aankhein kholo!",
+        "Azhan bhai aankhein kholo! 🤣",
 
-        "😂 Galat shoe! Dobara try karo!",
+        "Galat shoe! Dobara try karo 😂",
 
         "🩴 Ye prize wala shoe nahi hai!"
 
     ];
 
-    const randomMessage =
-        messages[Math.floor(Math.random() * messages.length)];
 
-    document.getElementById("message").innerHTML =
+    const randomMessage =
+        messages[
+            Math.floor(
+                Math.random()
+                * messages.length
+            )
+        ];
+
+
+    document
+        .getElementById("message")
+        .innerHTML =
         "❌ " + randomMessage;
 
 }
 
 
-/* ================= PRIZE ================= */
+
+/* ================================================= */
+/* CLAIM PRIZE */
+/* ================================================= */
 
 function claimPrize() {
 
-    alert(
-        "🎉 CONGRATULATIONS AZHAN! 🎉\n\n" +
-        "Tumne Shoe Challenge complete kar diya! 👟😂"
-    );
+
+    const prizeScreen =
+        document.getElementById(
+            "prizeScreen"
+        );
+
+
+    prizeScreen.style.display =
+        "flex";
+
+
+    /* ================= SOUND ================= */
+
+    const sound =
+        new Audio(
+            "images/funny-sound.mp3"
+        );
+
+
+    sound.volume = 1.0;
+
+
+    sound.play()
+        .catch(
+            function(error) {
+
+                console.log(
+                    "Sound could not play:",
+                    error
+                );
+
+            }
+        );
+
+
+    /* ================= CONFETTI ================= */
+
+    createConfetti();
 
 }
 
+
+
+/* ================= CONFETTI ================= */
+
+function createConfetti() {
+
+
+    const emojis = [
+
+        "🎉",
+        "🎊",
+        "🎂",
+        "👟",
+        "😂",
+        "🥳",
+        "🏆",
+        "✨"
+
+    ];
+
+
+    for (
+        let i = 0;
+        i < 60;
+        i++
+    ) {
+
+
+        const confetti =
+            document.createElement("div");
+
+
+        confetti.className =
+            "confetti";
+
+
+        confetti.innerText =
+            emojis[
+                Math.floor(
+                    Math.random()
+                    * emojis.length
+                )
+            ];
+
+
+        confetti.style.left =
+            Math.random()
+            * 100 + "vw";
+
+
+        confetti.style.animationDelay =
+            Math.random()
+            * 2 + "s";
+
+
+        confetti.style.fontSize =
+            (18 +
+            Math.random() * 18)
+            + "px";
+
+
+        document.body
+            .appendChild(confetti);
+
+
+        setTimeout(
+            function() {
+
+                confetti.remove();
+
+            },
+            5000
+        );
+
+    }
+
+}
+
+
+
+/* ================= CLOSE PRIZE ================= */
+
+function closePrize() {
+
+
+    document
+        .getElementById("prizeScreen")
+        .style.display = "none";
+
+}
+
+
 </script>
 
+
 </body>
+
 </html>
