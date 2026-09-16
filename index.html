@@ -1,232 +1,395 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Happy Birthday Azhan 🎂</title>
+<title>Happy Birthday Azhan 🎂</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
 
-        body {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #111, #292929);
-            color: white;
-            text-align: center;
-            overflow: hidden;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .container {
-            width: 90%;
-            max-width: 500px;
-            padding: 30px 20px;
-            background: rgba(255,255,255,0.08);
-            border-radius: 25px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-        }
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #111, #292929);
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
 
-        .shoe {
-            font-size: 80px;
-            animation: bounce 1.5s infinite;
-            margin-bottom: 15px;
-        }
+.container {
+    width: 92%;
+    max-width: 520px;
+    margin: auto;
+    margin-top: 7vh;
+    padding: 28px 20px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 25px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
 
-        h1 {
-            font-size: 34px;
-            margin-bottom: 12px;
-        }
+/* START SCREEN */
 
-        .name {
-            font-size: 42px;
-            font-weight: bold;
-            margin-bottom: 18px;
-        }
+#startScreen {
+    display: block;
+}
 
-        p {
-            font-size: 17px;
-            color: #ddd;
-            line-height: 1.5;
-        }
+.bigShoe {
+    font-size: 80px;
+    animation: bounce 1.5s infinite;
+}
 
-        .start-btn {
-            margin-top: 25px;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            background: white;
-            color: black;
-            transition: 0.3s;
-        }
+h1 {
+    font-size: 32px;
+    margin-top: 15px;
+}
 
-        .start-btn:hover {
-            transform: scale(1.08);
-        }
+.name {
+    font-size: 42px;
+    font-weight: bold;
+    margin: 10px 0 20px;
+}
 
-        .creator {
-            display: block;
-            margin-top: 22px;
-            font-size: 12px;
-            color: #aaa;
-            text-decoration: none;
-        }
+.description {
+    color: #ddd;
+    line-height: 1.6;
+}
 
-        .creator:hover {
-            color: white;
-        }
+.start-btn,
+.prize-btn {
+    margin-top: 25px;
+    padding: 15px 28px;
+    border: none;
+    border-radius: 50px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    background: white;
+    color: black;
+    transition: 0.3s;
+}
 
-        /* Game Screen */
-        #gameScreen {
-            display: none;
-        }
+.start-btn:hover,
+.prize-btn:hover {
+    transform: scale(1.08);
+}
 
-        .game-title {
-            font-size: 30px;
-            margin-bottom: 15px;
-        }
+.creator {
+    display: block;
+    margin-top: 22px;
+    font-size: 12px;
+    color: #aaa;
+    text-decoration: none;
+}
 
-        .game-info {
-            font-size: 18px;
-            margin-bottom: 25px;
-            color: #ddd;
-        }
+/* GAME */
 
-        .shoes {
-            display: flex;
-            justify-content: center;
-            gap: 18px;
-            flex-wrap: wrap;
-        }
+#gameScreen {
+    display: none;
+}
 
-        .shoe-btn {
-            font-size: 55px;
-            padding: 15px;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            background: rgba(255,255,255,0.12);
-            transition: 0.2s;
-        }
+.gameTitle {
+    font-size: 30px;
+    font-weight: bold;
+}
 
-        .shoe-btn:hover {
-            transform: scale(1.15);
-        }
+.score {
+    margin-top: 10px;
+    font-size: 19px;
+}
 
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
+.instruction {
+    margin-top: 15px;
+    color: #ddd;
+}
 
-            50% {
-                transform: translateY(-15px);
-            }
-        }
-    </style>
+/* GAME AREA */
+
+#gameArea {
+    position: relative;
+    height: 320px;
+    margin-top: 20px;
+    border-radius: 20px;
+    background: rgba(0,0,0,0.25);
+    overflow: hidden;
+}
+
+.shoe {
+    position: absolute;
+    font-size: 55px;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.2s;
+}
+
+.shoe:hover {
+    transform: scale(1.2);
+}
+
+.message {
+    min-height: 45px;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+/* PRIZE BUTTON */
+
+#prizeBtn {
+    display: none;
+}
+
+/* ANIMATION */
+
+@keyframes bounce {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+}
+
+</style>
 </head>
 
 <body>
 
-    <!-- START SCREEN -->
-    <div class="container" id="startScreen">
 
-        <div class="shoe">👟</div>
+<!-- ================= START SCREEN ================= -->
 
-        <h1>🎂 HAPPY BIRTHDAY</h1>
+<div class="container" id="startScreen">
 
-        <div class="name">
-            AZHAN 🎉
-        </div>
+    <div class="bigShoe">👟</div>
 
-        <p>
-            Oye Shoe King 👑<br>
-            Birthday surprise unlock karne ke liye
-            ek chhota sa shoe game khelna padega 😂
-        </p>
+    <h1>🎂 HAPPY BIRTHDAY</h1>
 
-        <button class="start-btn" onclick="startGame()">
-            👟 START SHOE GAME
-        </button>
-
-        <a
-            class="creator"
-            href="https://www.instagram.com/be.like_sahil?stkn=MTF3eWhrZ3o1NWdzeQ=="
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            Created by @be.like_sahil
-        </a>
-
+    <div class="name">
+        AZHAN 🎉
     </div>
 
+    <p class="description">
+        Oye Shoe King 👑<br>
+        Birthday surprise unlock karne ke liye
+        pehle ek chhota sa challenge complete karo 😂
+    </p>
 
-    <!-- GAME SCREEN -->
-    <div class="container" id="gameScreen">
+    <button class="start-btn" onclick="startGame()">
+        👟 START SHOE GAME
+    </button>
 
-        <div class="shoe">👟</div>
+    <a
+        class="creator"
+        href="https://www.instagram.com/be.like_sahil?stkn=MTF3eWhrZ3o1NWdzeQ=="
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        Created by @be.like_sahil
+    </a>
 
-        <div class="game-title">
-            👟 Shoe Challenge
-        </div>
+</div>
 
-        <div class="game-info">
-            Azhan, sahi shoe choose karo 😂
-        </div>
 
-        <div class="shoes">
+<!-- ================= GAME SCREEN ================= -->
 
-            <button class="shoe-btn" onclick="wrongShoe()">👞</button>
+<div class="container" id="gameScreen">
 
-            <button class="shoe-btn" onclick="correctShoe()">👟</button>
-
-            <button class="shoe-btn" onclick="wrongShoe()">🩴</button>
-
-            <button class="shoe-btn" onclick="wrongShoe()">🥾</button>
-
-        </div>
-
-        <p id="message" style="margin-top:25px;"></p>
-
+    <div class="gameTitle">
+        👟 SHOE CHALLENGE
     </div>
 
+    <div class="score">
+        Shoes Found:
+        <span id="score">0</span>/5
+    </div>
 
-    <script>
+    <p class="instruction">
+        👀 Sirf correct 👟 ko pakdo!
+    </p>
 
-        function startGame() {
+    <div id="gameArea"></div>
 
-            document.getElementById("startScreen").style.display = "none";
+    <div class="message" id="message">
+        Ready? 😂
+    </div>
 
-            document.getElementById("gameScreen").style.display = "block";
+    <button
+        id="prizeBtn"
+        class="prize-btn"
+        onclick="claimPrize()"
+    >
+        🏆 CLAIM YOUR PRIZE
+    </button>
 
-        }
-
-
-        function wrongShoe() {
-
-            document.getElementById("message").innerHTML =
-                "❌ Oye Azhan! Ye kya utha liya 😂<br>Dobara try kar!";
-
-        }
+</div>
 
 
-        function correctShoe() {
+<script>
 
-            document.getElementById("message").innerHTML =
-                "✅ Sahi pakde ho! 👟🔥<br>Prize almost unlocked 😂";
+/* ================= GAME VARIABLES ================= */
 
-        }
+let score = 0;
 
-    </script>
+const totalShoes = 5;
+
+
+/* ================= START GAME ================= */
+
+function startGame() {
+
+    document.getElementById("startScreen").style.display = "none";
+
+    document.getElementById("gameScreen").style.display = "block";
+
+    createShoe();
+
+}
+
+
+/* ================= CREATE SHOE ================= */
+
+function createShoe() {
+
+    const gameArea = document.getElementById("gameArea");
+
+    gameArea.innerHTML = "";
+
+    /* Random shoes */
+
+    const shoes = ["👟", "👞", "🩴", "🥾", "👠"];
+
+    const randomWrong1 =
+        shoes[Math.floor(Math.random() * shoes.length)];
+
+    const randomWrong2 =
+        shoes[Math.floor(Math.random() * shoes.length)];
+
+    /* Correct shoe */
+
+    const correct = document.createElement("div");
+
+    correct.className = "shoe";
+
+    correct.innerHTML = "👟";
+
+    correct.onclick = correctShoe;
+
+    /* Random position */
+
+    correct.style.left =
+        Math.random() * 75 + "%";
+
+    correct.style.top =
+        Math.random() * 70 + "%";
+
+    gameArea.appendChild(correct);
+
+
+    /* Wrong shoes */
+
+    for (let i = 0; i < 3; i++) {
+
+        const wrong = document.createElement("div");
+
+        wrong.className = "shoe";
+
+        wrong.innerHTML =
+            shoes[Math.floor(Math.random() * shoes.length)];
+
+        wrong.onclick = wrongShoe;
+
+        wrong.style.left =
+            Math.random() * 75 + "%";
+
+        wrong.style.top =
+            Math.random() * 70 + "%";
+
+        gameArea.appendChild(wrong);
+
+    }
+
+}
+
+
+/* ================= CORRECT SHOE ================= */
+
+function correctShoe() {
+
+    score++;
+
+    document.getElementById("score").innerText = score;
+
+    document.getElementById("message").innerHTML =
+        "✅ Sahi pakde ho Azhan! 👟🔥";
+
+    if (score >= totalShoes) {
+
+        document.getElementById("message").innerHTML =
+            "🎉 CHALLENGE COMPLETE!<br>" +
+            "Ab asli surprise unlock karo 😂";
+
+        document.getElementById("prizeBtn").style.display =
+            "inline-block";
+
+        document.getElementById("gameArea").innerHTML =
+            "🏆👟🎉";
+
+    } else {
+
+        setTimeout(createShoe, 600);
+
+    }
+
+}
+
+
+/* ================= WRONG SHOE ================= */
+
+function wrongShoe() {
+
+    const messages = [
+
+        "😂 Bhai ye kya utha liya?!",
+
+        "❌ Ye shoe nahi chahiye tha!",
+
+        "🤣 Azhan bhai aankhein kholo!",
+
+        "😂 Galat shoe! Dobara try karo!",
+
+        "🩴 Ye prize wala shoe nahi hai!"
+
+    ];
+
+    const randomMessage =
+        messages[Math.floor(Math.random() * messages.length)];
+
+    document.getElementById("message").innerHTML =
+        "❌ " + randomMessage;
+
+}
+
+
+/* ================= PRIZE ================= */
+
+function claimPrize() {
+
+    alert(
+        "🎉 CONGRATULATIONS AZHAN! 🎉\n\n" +
+        "Tumne Shoe Challenge complete kar diya! 👟😂"
+    );
+
+}
+
+</script>
 
 </body>
 </html>
