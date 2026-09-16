@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Birthday Surprise 👟🎂</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #111, #292929);
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 500px;
+            padding: 30px 20px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        .shoe {
+            font-size: 80px;
+            animation: bounce 1.5s infinite;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 17px;
+            color: #ddd;
+            line-height: 1.5;
+        }
+
+        .start-btn {
+            margin-top: 25px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            background: white;
+            color: black;
+            transition: 0.3s;
+        }
+
+        .start-btn:hover {
+            transform: scale(1.08);
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="shoe">👟</div>
+
+        <h1>🎂 HAPPY BIRTHDAY! 🎉</h1>
+
+        <p>
+            Oye Shoe King 👑<br>
+            Birthday surprise unlock karne ke liye
+            ek chhota sa game khelna padega 😂
+        </p>
+
+        <button class="start-btn" onclick="startGame()">
+            👟 START SHOE GAME
+        </button>
+
+    </div>
+
+    <script>
+
+        function startGame() {
+            alert("Game loading... 👟😂");
+        }
+
+    </script>
+
+</body>
+</html>
