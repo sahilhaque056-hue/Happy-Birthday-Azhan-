@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Birthday Surprise 👟🎂</title>
+    <title>Happy Birthday Azhan 🎂</title>
 
     <style>
         * {
@@ -22,6 +22,7 @@
             background: linear-gradient(135deg, #111, #292929);
             color: white;
             text-align: center;
+            overflow: hidden;
         }
 
         .container {
@@ -36,12 +37,18 @@
         .shoe {
             font-size: 80px;
             animation: bounce 1.5s infinite;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         h1 {
-            font-size: 32px;
-            margin-bottom: 15px;
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .name {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 18px;
         }
 
         p {
@@ -67,19 +74,53 @@
             transform: scale(1.08);
         }
 
-        /* Created By */
         .creator {
             display: block;
             margin-top: 22px;
             font-size: 12px;
             color: #aaa;
             text-decoration: none;
-            transition: 0.3s;
         }
 
         .creator:hover {
             color: white;
-            transform: scale(1.03);
+        }
+
+        /* Game Screen */
+        #gameScreen {
+            display: none;
+        }
+
+        .game-title {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .game-info {
+            font-size: 18px;
+            margin-bottom: 25px;
+            color: #ddd;
+        }
+
+        .shoes {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .shoe-btn {
+            font-size: 55px;
+            padding: 15px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            background: rgba(255,255,255,0.12);
+            transition: 0.2s;
+        }
+
+        .shoe-btn:hover {
+            transform: scale(1.15);
         }
 
         @keyframes bounce {
@@ -96,23 +137,27 @@
 
 <body>
 
-    <div class="container">
+    <!-- START SCREEN -->
+    <div class="container" id="startScreen">
 
         <div class="shoe">👟</div>
 
-        <h1>🎂 HAPPY BIRTHDAY! 🎉</h1>
+        <h1>🎂 HAPPY BIRTHDAY</h1>
+
+        <div class="name">
+            AZHAN 🎉
+        </div>
 
         <p>
             Oye Shoe King 👑<br>
             Birthday surprise unlock karne ke liye
-            ek chhota sa game khelna padega 😂
+            ek chhota sa shoe game khelna padega 😂
         </p>
 
         <button class="start-btn" onclick="startGame()">
             👟 START SHOE GAME
         </button>
 
-        <!-- Instagram Creator Link -->
         <a
             class="creator"
             href="https://www.instagram.com/be.like_sahil?stkn=MTF3eWhrZ3o1NWdzeQ=="
@@ -124,10 +169,61 @@
 
     </div>
 
+
+    <!-- GAME SCREEN -->
+    <div class="container" id="gameScreen">
+
+        <div class="shoe">👟</div>
+
+        <div class="game-title">
+            👟 Shoe Challenge
+        </div>
+
+        <div class="game-info">
+            Azhan, sahi shoe choose karo 😂
+        </div>
+
+        <div class="shoes">
+
+            <button class="shoe-btn" onclick="wrongShoe()">👞</button>
+
+            <button class="shoe-btn" onclick="correctShoe()">👟</button>
+
+            <button class="shoe-btn" onclick="wrongShoe()">🩴</button>
+
+            <button class="shoe-btn" onclick="wrongShoe()">🥾</button>
+
+        </div>
+
+        <p id="message" style="margin-top:25px;"></p>
+
+    </div>
+
+
     <script>
 
         function startGame() {
-            alert("Game loading... 👟😂");
+
+            document.getElementById("startScreen").style.display = "none";
+
+            document.getElementById("gameScreen").style.display = "block";
+
+        }
+
+
+        function wrongShoe() {
+
+            document.getElementById("message").innerHTML =
+                "❌ Oye Azhan! Ye kya utha liya 😂<br>Dobara try kar!";
+
+        }
+
+
+        function correctShoe() {
+
+            document.getElementById("message").innerHTML =
+                "✅ Sahi pakde ho! 👟🔥<br>Prize almost unlocked 😂";
+
         }
 
     </script>
