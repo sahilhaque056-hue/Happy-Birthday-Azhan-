@@ -5,23 +5,24 @@
 
 <meta charset="UTF-8">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>Happy Birthday Azhan 🎂</title>
 
 
 <style>
 
-/* ================= BASIC ================= */
+/* ================= RESET ================= */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+
+/* ================= BODY ================= */
 
 body {
 
@@ -35,9 +36,9 @@ body {
     background:
         linear-gradient(
             135deg,
-            #111111,
+            #111,
             #292929,
-            #111111
+            #111
         );
 
     color: white;
@@ -48,7 +49,7 @@ body {
 }
 
 
-/* ================= CONTAINER ================= */
+/* ================= MAIN CONTAINER ================= */
 
 .container {
 
@@ -56,7 +57,7 @@ body {
 
     max-width: 520px;
 
-    margin: 7vh auto 0;
+    margin: 6vh auto 0;
 
     padding: 30px 20px;
 
@@ -71,7 +72,7 @@ body {
 
     box-shadow:
         0 10px 40px
-        rgba(0,0,0,0.5);
+        rgba(0,0,0,0.55);
 
 }
 
@@ -82,6 +83,7 @@ body {
     display: block;
 }
 
+
 .bigShoe {
 
     font-size: 80px;
@@ -91,6 +93,7 @@ body {
 
 }
 
+
 h1 {
 
     font-size: 32px;
@@ -98,6 +101,7 @@ h1 {
     margin-top: 15px;
 
 }
+
 
 .name {
 
@@ -110,18 +114,19 @@ h1 {
 
 }
 
+
 .description {
 
-    color: #dddddd;
-
-    line-height: 1.6;
+    color: #ddd;
 
     font-size: 17px;
+
+    line-height: 1.6;
 
 }
 
 
-/* ================= BUTTON ================= */
+/* ================= BUTTONS ================= */
 
 .start-btn,
 .prize-btn {
@@ -146,10 +151,10 @@ h1 {
     color: black;
 
     transition:
-        transform 0.25s,
-        box-shadow 0.25s;
+        0.25s;
 
 }
+
 
 .start-btn:hover,
 .prize-btn:hover {
@@ -174,7 +179,7 @@ h1 {
 
     font-size: 12px;
 
-    color: #aaaaaa;
+    color: #aaa;
 
     text-decoration: none;
 
@@ -182,23 +187,22 @@ h1 {
 
 }
 
+
 .creator:hover {
 
     color: white;
 
-    transform:
-        scale(1.03);
-
 }
 
 
-/* ================= GAME ================= */
+/* ================= GAME SCREEN ================= */
 
 #gameScreen {
 
     display: none;
 
 }
+
 
 .gameTitle {
 
@@ -208,6 +212,7 @@ h1 {
 
 }
 
+
 .score {
 
     margin-top: 10px;
@@ -216,11 +221,12 @@ h1 {
 
 }
 
+
 .instruction {
 
     margin-top: 15px;
 
-    color: #dddddd;
+    color: #ddd;
 
 }
 
@@ -266,6 +272,7 @@ h1 {
 
 }
 
+
 .shoe:hover {
 
     transform:
@@ -274,7 +281,7 @@ h1 {
 }
 
 
-/* ================= MESSAGE ================= */
+/* ================= GAME MESSAGE ================= */
 
 .message {
 
@@ -298,7 +305,9 @@ h1 {
 }
 
 
-/* ================= PRIZE SCREEN ================= */
+/* ================================================= */
+/* PRIZE SCREEN */
+/* ================================================= */
 
 #prizeScreen {
 
@@ -311,7 +320,7 @@ h1 {
     z-index: 9999;
 
     background:
-        rgba(0,0,0,0.95);
+        rgba(0,0,0,0.96);
 
     justify-content: center;
 
@@ -334,10 +343,15 @@ h1 {
 
     text-align: center;
 
+    position: relative;
+
+    z-index: 10001;
+
     animation:
         prizePop 0.7s ease;
 
 }
+
 
 .prizeBox h1 {
 
@@ -347,9 +361,10 @@ h1 {
 
 }
 
+
 .prizeBox p {
 
-    color: #dddddd;
+    color: #ddd;
 
     font-size: 18px;
 
@@ -358,7 +373,7 @@ h1 {
 }
 
 
-/* ================= PHOTO ================= */
+/* ================= FUNNY PHOTO ================= */
 
 .funnyPhoto {
 
@@ -368,7 +383,7 @@ h1 {
 
     max-height: 380px;
 
-    object-fit: cover;
+    object-fit: contain;
 
     border-radius: 25px;
 
@@ -377,9 +392,26 @@ h1 {
 
     display: block;
 
+    background: #111;
+
     box-shadow:
         0 0 30px
         rgba(255,255,255,0.25);
+
+}
+
+
+/* ================= PHOTO ERROR ================= */
+
+#photoError {
+
+    display: none;
+
+    color: #ff7777;
+
+    margin: 20px 0;
+
+    font-size: 15px;
 
 }
 
@@ -388,10 +420,10 @@ h1 {
 
 .closeBtn {
 
-    margin-top: 15px;
+    margin-top: 18px;
 
     padding:
-        12px 25px;
+        13px 28px;
 
     border: none;
 
@@ -401,10 +433,14 @@ h1 {
 
     font-weight: bold;
 
+    font-size: 15px;
+
 }
 
 
-/* ================= CONFETTI ================= */
+/* ================================================= */
+/* CONFETTI */
+/* ================================================= */
 
 .confetti {
 
@@ -412,11 +448,11 @@ h1 {
 
     top: -30px;
 
-    font-size: 25px;
-
     z-index: 10000;
 
     pointer-events: none;
+
+    font-size: 24px;
 
     animation:
         fall 3s linear forwards;
@@ -496,11 +532,13 @@ h1 {
 
     }
 
+
     h1 {
 
         font-size: 27px;
 
     }
+
 
     .name {
 
@@ -508,11 +546,13 @@ h1 {
 
     }
 
+
     .bigShoe {
 
         font-size: 70px;
 
     }
+
 
     .gameTitle {
 
@@ -520,15 +560,33 @@ h1 {
 
     }
 
+
     #gameArea {
 
         height: 300px;
 
     }
 
+
     .prizeBox h1 {
 
         font-size: 30px;
+
+    }
+
+
+    .prizeBox p {
+
+        font-size: 16px;
+
+    }
+
+
+    .funnyPhoto {
+
+        max-width: 280px;
+
+        max-height: 350px;
 
     }
 
@@ -691,13 +749,31 @@ h1 {
         </p>
 
 
-        <!-- FRIEND PHOTO -->
+        <!-- EXACT IMAGE FILE -->
 
         <img
-            src="images/azhan-funny.jpg"
+            src="./images/azhan-funny.png"
             alt="Azhan Funny Photo"
             class="funnyPhoto"
+            onerror="showPhotoError()"
         >
+
+
+        <p
+            id="photoError"
+        >
+
+            📸 Photo load nahi hui 😂
+
+            <br><br>
+
+            Check karo:
+
+            <br>
+
+            <b>images/azhan-funny.png</b>
+
+        </p>
 
 
         <p>
@@ -741,7 +817,7 @@ h1 {
 <script>
 
 
-/* ================= GAME VARIABLES ================= */
+/* ================= VARIABLES ================= */
 
 let score = 0;
 
@@ -749,7 +825,9 @@ const totalShoes = 5;
 
 
 
-/* ================= START GAME ================= */
+/* ================================================= */
+/* START GAME */
+/* ================================================= */
 
 function startGame() {
 
@@ -769,7 +847,9 @@ function startGame() {
 
 
 
-/* ================= CREATE SHOES ================= */
+/* ================================================= */
+/* CREATE SHOES */
+/* ================================================= */
 
 function createShoe() {
 
@@ -792,7 +872,7 @@ function createShoe() {
     ];
 
 
-    /* ================= CORRECT SHOE ================= */
+    /* CORRECT SHOE */
 
     const correct =
         document.createElement("div");
@@ -817,7 +897,7 @@ function createShoe() {
 
 
 
-    /* ================= WRONG SHOES ================= */
+    /* WRONG SHOES */
 
     for (
         let i = 0;
@@ -861,7 +941,9 @@ function createShoe() {
 
 
 
-/* ================= CORRECT SHOE ================= */
+/* ================================================= */
+/* CORRECT SHOE */
+/* ================================================= */
 
 function correctShoe() {
 
@@ -907,7 +989,6 @@ function correctShoe() {
 
     else {
 
-
         setTimeout(
             createShoe,
             500
@@ -919,7 +1000,9 @@ function correctShoe() {
 
 
 
-/* ================= WRONG SHOE ================= */
+/* ================================================= */
+/* WRONG SHOE */
+/* ================================================= */
 
 function wrongShoe() {
 
@@ -974,11 +1057,11 @@ function claimPrize() {
         "flex";
 
 
-    /* ================= SOUND ================= */
+    /* PLAY SOUND */
 
     const sound =
         new Audio(
-            "images/funny-sound.mp3"
+            "./images/funny-sound.mp3"
         );
 
 
@@ -990,7 +1073,7 @@ function claimPrize() {
             function(error) {
 
                 console.log(
-                    "Sound could not play:",
+                    "Sound error:",
                     error
                 );
 
@@ -998,7 +1081,7 @@ function claimPrize() {
         );
 
 
-    /* ================= CONFETTI ================= */
+    /* CONFETTI */
 
     createConfetti();
 
@@ -1006,7 +1089,9 @@ function claimPrize() {
 
 
 
-/* ================= CONFETTI ================= */
+/* ================================================= */
+/* CONFETTI */
+/* ================================================= */
 
 function createConfetti() {
 
@@ -1027,7 +1112,7 @@ function createConfetti() {
 
     for (
         let i = 0;
-        i < 60;
+        i < 45;
         i++
     ) {
 
@@ -1056,12 +1141,12 @@ function createConfetti() {
 
         confetti.style.animationDelay =
             Math.random()
-            * 2 + "s";
+            * 1.5 + "s";
 
 
         confetti.style.fontSize =
             (18 +
-            Math.random() * 18)
+            Math.random() * 15)
             + "px";
 
 
@@ -1084,17 +1169,38 @@ function createConfetti() {
 
 
 
-/* ================= CLOSE PRIZE ================= */
+/* ================================================= */
+/* PHOTO ERROR */
+/* ================================================= */
+
+function showPhotoError() {
+
+    document
+        .querySelector(".funnyPhoto")
+        .style.display = "none";
+
+
+    document
+        .getElementById("photoError")
+        .style.display = "block";
+
+}
+
+
+
+/* ================================================= */
+/* CLOSE PRIZE */
+/* ================================================= */
 
 function closePrize() {
 
 
     document
         .getElementById("prizeScreen")
-        .style.display = "none";
+        .style.display =
+        "none";
 
 }
-
 
 </script>
 
